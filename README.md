@@ -4,7 +4,7 @@ A clean white, modern chat UI for **KXF GPT**.
 
 ## Run locally
 
-Open `/home/runner/work/KXFGPT/KXFGPT/index.html` in a browser.
+Open `index.html` in a browser.
 
 ## Features
 
@@ -22,4 +22,4 @@ Open `/home/runner/work/KXFGPT/KXFGPT/index.html` in a browser.
 
 ## Google login setup
 
-Update `GOOGLE_CLIENT_ID` in `/home/runner/work/KXFGPT/KXFGPT/app.js` with your Google OAuth Web Client ID.
+Update `GOOGLE_CLIENT_ID` in `app.js` with your Google OAuth Web Client ID.
