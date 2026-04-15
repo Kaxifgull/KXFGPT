@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KXF GPT</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="top-header">
+        <div>
+          <h1>KXF GPT</h1>
+          <p class="subtitle">Modern AI chat in a clean white workspace.</p>
+        </div>
+        <div class="header-actions">
+          <button id="settings-toggle" class="secondary-btn">Settings</button>
+          <button id="login-toggle" class="primary-btn">Sign in with Google</button>
+        </div>
+      </header>
+
+      <section id="temporary-banner" class="status-banner">
+        Temporary mode: chats are not saved until you sign in.
+      </section>
+
+      <main class="layout">
+        <aside class="sidebar">
+          <div class="panel">
+            <h2>Recent Chats</h2>
+            <ul id="recent-chats" class="recent-list"></ul>
+            <p id="recent-empty" class="muted">Sign in to view and save recent chats.</p>
+          </div>
+
+          <div class="panel">
+            <h2>Export Conversation</h2>
+            <div class="export-grid">
+              <button id="export-pdf" class="secondary-btn">PDF</button>
+              <button id="export-docx" class="secondary-btn">DOCX / Word</button>
+              <button id="export-xlsx" class="secondary-btn">Excel</button>
+            </div>
+          </div>
+
+          <div id="google-auth-slot" class="panel auth-panel">
+            <h2>Google Login</h2>
+            <p class="muted">Use your Google account to save chats and memories.</p>
+            <div id="google-signin-button"></div>
+          </div>
+        </aside>
+
+        <section class="chat-panel">
+          <div id="chat-messages" class="messages"></div>
+          <form id="chat-form" class="composer">
+            <textarea
+              id="message-input"
+              placeholder="Type your message..."
+              rows="3"
+              required
+            ></textarea>
+            <div class="composer-actions">
+              <label class="file-input-label" for="image-input">Upload images</label>
+              <input id="image-input" type="file" accept="image/*" multiple />
+              <span id="image-feedback" class="muted"></span>
+              <button type="submit" class="primary-btn">Send</button>
+            </div>
+          </form>
+        </section>
+      </main>
+
+      <footer class="footer">KXG GPT developed by KAXIF GULL</footer>
+    </div>
+
+    <section id="settings-panel" class="settings-panel hidden" aria-hidden="true">
+      <div class="settings-content">
+        <div class="settings-head">
+          <h2>Settings</h2>
+          <button id="settings-close" class="secondary-btn">Close</button>
+        </div>
+        <label for="memories-input">Memories (conversation tone/preferences)</label>
+        <textarea id="memories-input" rows="6" placeholder="e.g. concise tone, formal style"></textarea>
+        <p id="memories-status" class="muted"></p>
+        <button id="save-memories" class="primary-btn">Save memories</button>
+      </div>
+    </section>
+  </body>
+</html>
